@@ -26,9 +26,10 @@ namespace DotnetIteration
         //
         public static IEnumerable<string> Yelling(List<string> words)
         {
-            throw new System.NotImplementedException();
-        }
+            var NewList = words.Select(word => word.ToUpper());
 
+            return NewList;
+        }
 
         // 
         // 2) Complete the method named `Double` that takes an list of
@@ -37,7 +38,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> Double(List<int> numbers)
         {
-            throw new System.NotImplementedException();
+            var DoubledValues = numbers.Select(number => number * 2);
+            return DoubledValues;
         }
 
 
@@ -49,7 +51,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<string> StringyIndexes(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var StringsWithIndexesIncluded = data.Select((datapoint, index) => datapoint + $" is at index {index}");
+            return StringsWithIndexesIncluded;
         }
 
 
@@ -59,7 +62,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var EvenNumberedListItems = data.Where(value => value % 2 == 0);
+            return EvenNumberedListItems;
         }
 
 
@@ -70,7 +74,8 @@ namespace DotnetIteration
         // 
         public static IEnumerable<int> OnlyTheEvenIndexedSurvive(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var EvenIndexedItems = data.Where((value, index) => index % 2 == 0);
+            return EvenIndexedItems;
         }
 
 
@@ -87,9 +92,12 @@ namespace DotnetIteration
         //   score: 99
         // }
         // 
+
         public static IEnumerable<string> BestMovieOfTheYear(List<Movie> data, int year)
         {
-            throw new System.NotImplementedException();
+            var specificMoviesByYear = data.Where(Movie1 => Movie1.Score > 90 && Movie1.Year == year);
+            var finalMovieList = specificMoviesByYear.Select(eachMovie => eachMovie.Name);
+            return finalMovieList;
         }
 
 
@@ -99,7 +107,8 @@ namespace DotnetIteration
         // 
         public static bool EveryoneIsOdd(List<int> data)
         {
-            throw new System.NotImplementedException();
+            var oddNumberTest = data.All(DataPoint => DataPoint % 2 > 0);
+            return oddNumberTest;
         }
 
 
@@ -110,7 +119,9 @@ namespace DotnetIteration
         // 
         public static string FindTheNeedle(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var needle = data.First(dataPoint => dataPoint.Contains("needle") == true);
+            return needle;
+
         }
 
 
@@ -121,9 +132,10 @@ namespace DotnetIteration
         // 
         public static int FindTheNeedleIndex(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var needleLocation = data.First(dataPoint => dataPoint.Contains("needle") == true);
+            var findIndex = data.IndexOf(needleLocation);
+            return findIndex;
         }
-
 
         // 
         // 10) Complete the method SomeoneToLove that accepts an list of
@@ -132,7 +144,8 @@ namespace DotnetIteration
         // 
         public static bool SomeoneToLove(List<string> data)
         {
-            throw new System.NotImplementedException();
+            var stringCharacterTest = data.Any(dataPoint => dataPoint.Length == 4);
+            return stringCharacterTest;
         }
     }
 }
