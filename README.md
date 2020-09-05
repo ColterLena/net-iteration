@@ -1,4 +1,4 @@
-# .NET Iteration
+# .NET Iteration: A C# and .NET Exercise
 
 ## Objectives
 
